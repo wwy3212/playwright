@@ -1,0 +1,40 @@
+# Dependencies
+frontend/node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.db
+*.sqlite3
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build output
+frontend/dist/
+
+# Uploads and test data
+backend/uploads/
+backend/test_cases/
+backend/projects/
+
+# Logs
+*.log
+
+# Local config
+backend/config_local.py
