@@ -88,3 +88,21 @@ class StructuredTestCase(db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     project = db.relationship('Project', backref=db.backref('structured_cases', lazy='dynamic'))
+
+
+class Requirement(db.Model):
+    """需求文件管理模型"""
+    __tablename__ = 'requirements'
+
+    id = db.Column(db.Integer, primary_key=True)
+    project_id = db.Column(db.Integer, db.ForeignKey('projects.id'), nullable=False)
+    filename = db.Column(db.String(255), nullable=False)      # 原始文件名
+    file_path = db.Column(db.String(500), nullable=False)    # 存储路径
+    file_size = db.Column(db.Integer)                        # 文件大小(字节)
+    file_type = db.Column(db.String(50))                     # 文件类型
+    uploader_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    uploaded_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    uploader = db.relationship('User', backref='uploads')
+    project = db.relationship('Project', backref='requirements')

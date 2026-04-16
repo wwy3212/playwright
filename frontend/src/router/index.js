@@ -20,6 +20,12 @@ const routes = [
         meta: { title: '项目管理', icon: 'Folder' }
       },
       {
+        path: 'requirements',
+        name: 'RequirementManage',
+        component: () => import('@/views/RequirementManage.vue'),
+        meta: { title: '需求文件管理', icon: 'Document' }
+      },
+      {
         path: 'generate-nl',
         name: 'GenerateNL',
         component: () => import('@/views/GenerateNL.vue'),

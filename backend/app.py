@@ -8,7 +8,7 @@ from flask_cors import CORS
 from config import Config
 from extensions import db, login_manager
 from models import User
-from routes import auth, projects, test_cases, execution
+from routes import auth, projects, test_cases, execution, requirements
 
 
 def create_app(config_class=Config):
@@ -27,6 +27,7 @@ def create_app(config_class=Config):
     app.register_blueprint(projects)
     app.register_blueprint(test_cases)
     app.register_blueprint(execution)
+    app.register_blueprint(requirements)
 
     # 用户加载回调
     @login_manager.user_loader

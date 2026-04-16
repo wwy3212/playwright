@@ -21,7 +21,8 @@ class Config:
     UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'uploads')
     TEST_CASES_FOLDER = os.path.join(os.path.dirname(__file__), 'test_cases')
     PROJECTS_FOLDER = os.path.join(os.path.dirname(__file__), 'projects')
+    REQUIREMENTS_FOLDER = os.path.join(os.path.dirname(__file__), 'requirements')
 
     # 确保目录存在
-    for folder in [UPLOAD_FOLDER, TEST_CASES_FOLDER, PROJECTS_FOLDER]:
+    for folder in [UPLOAD_FOLDER, TEST_CASES_FOLDER, PROJECTS_FOLDER, REQUIREMENTS_FOLDER]:
         os.makedirs(folder, exist_ok=True)
